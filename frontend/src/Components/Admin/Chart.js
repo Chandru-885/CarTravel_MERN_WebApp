@@ -16,13 +16,13 @@ export default class Chart extends React.Component {
     var localuserid = []
     var touruserid  = []
 
-    fetch('http://localhost:8010/api/v1/carbookedusers',{
+    fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers',{
             headers:authHeader()
         })
         .then(res=>res.json())
         .then(data=>{ localbooking = data
             
-            fetch('http://localhost:8010/api/v1/cartourbookedusers',{
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers',{
                 headers:authHeader()
               })
               .then(res=>res.json())

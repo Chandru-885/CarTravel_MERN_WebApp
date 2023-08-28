@@ -11,7 +11,7 @@ export default class UserBookingList extends Component {
 
     componentDidMount(){
         var Userid  =  AuthService.finduserid();
-        fetch('http://localhost:8010/api/v1/carbookedusers/'+ Userid,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/'+ Userid,{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -21,7 +21,7 @@ export default class UserBookingList extends Component {
     }
 
     deletepreviousBooking(id){
-        fetch('http://localhost:8010/api/v1/carbookedusers/' + id, {
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/' + id, {
         headers:authHeader(),    
         method: 'DELETE' 
         })
@@ -30,7 +30,7 @@ export default class UserBookingList extends Component {
             console.log(data);
             this.setState({message: 'Record successfully deleted'})
             var Userid  =  AuthService.finduserid();
-                fetch('http://localhost:8010/api/v1/carbookedusers/'+ Userid,{
+                fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/'+ Userid,{
                     headers:authHeader()
                 })
                 .then(res=>res.json())

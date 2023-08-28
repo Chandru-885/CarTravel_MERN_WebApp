@@ -20,7 +20,7 @@ export default class AddpackageAdmin extends Component {
         if(this.packagenameid.current.value ==="" || this.packagename.current.value === "" || this.packagedetails.current.value === "" || this.packageprice.current.value === "" || this.packageimage.current.value === "" ||  this.carType.current.value === "" || this.noofdays.current.value === ""){
             this.setState({message: 'Enter all the fields'})
         }else{
-            fetch('http://localhost:8010/api/v1/adminHomePage', {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage', {
                 method: 'POST',
                 headers: authHeader(),
                 body: JSON.stringify({packagenameid: this.packagenameid.current.value, packagename: this.packagename.current.value, packagedetails: this.packagedetails.current.value, packageprice : this.packageprice.current.value, packageimage : this.packageimage.current.value, carType:this.carType.current.value,noofdays:this.noofdays.current.value}),

@@ -12,7 +12,7 @@ export default class UserLogDetail extends Component {
     
         componentDidMount(){
             var current_user = AuthService.finduserid();
-            fetch('http://localhost:8010/api/v1/AllUsersLog/'+current_user,{
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/AllUsersLog/'+current_user,{
                 headers:authHeader()
             })
             .then(res=>res.json())

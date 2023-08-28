@@ -13,7 +13,7 @@ export default class TourPackage extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:8010/api/v1/adminHomePage',{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage',{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -25,7 +25,7 @@ export default class TourPackage extends Component {
     addTourBookingDB(Gallerydata){
         var userid  =  AuthService.finduserid();
         var usernameid = AuthService.findusername();
-        fetch('http://localhost:8010/api/v1/cartourbookedusers', {
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers', {
                 method: 'POST',
                 headers: authHeader(),
                 body: JSON.stringify({packagename: Gallerydata.packagename, packageprice : Gallerydata.packageprice, carType : Gallerydata.carType, noofdays : Gallerydata.noofdays, user : userid, usernameid : usernameid}),
@@ -53,7 +53,7 @@ export default class TourPackage extends Component {
 
     sortfunction(e){
         e.preventDefault();
-        fetch('http://localhost:8010/api/v1/adminHomePage/?sort='+ this.sortbydata.current.value,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage/?sort='+ this.sortbydata.current.value,{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -65,7 +65,7 @@ export default class TourPackage extends Component {
 
     displayBasedOnNoofDays(NoofDays){
         console.log("Package_NoofDays",NoofDays)
-        fetch('http://localhost:8010/api/v1/adminHomePage/'+NoofDays,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage/'+NoofDays,{
             headers:authHeader()
         })
         .then(res=>res.json())

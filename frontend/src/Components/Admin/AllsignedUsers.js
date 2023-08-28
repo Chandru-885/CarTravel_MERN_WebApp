@@ -9,7 +9,7 @@ export default class AllsignedUsers extends Component {
         this.state = {SignedUsers: [],searchList:[], displayAll:true}
     }
     componentDidMount(){
-        fetch('http://localhost:8010/api/v1/signedupuserdetails',{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/signedupuserdetails',{
             headers: authHeader()
         })
         .then(res=>res.json())
@@ -22,7 +22,7 @@ export default class AllsignedUsers extends Component {
     search(e){
         e.preventDefault();
         this.setState({displayAll:false})
-        fetch('http://localhost:8010/api/v1/signedupuserdetails/'+ this.searchinput.current.value,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/signedupuserdetails/'+ this.searchinput.current.value,{
             headers:authHeader()
         })
         .then(res=>res.json())

@@ -8,7 +8,7 @@ export const login = (status) => {
         console.log('Removing token ****************** ')
         var current_user = AuthService.finduserid();
         var current_user_id;
-        fetch('http://localhost:8010/api/v1/AllUsersLog/'+current_user,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/AllUsersLog/'+current_user,{
             headers: authHeader()
         })
         .then(data =>data.json())
@@ -16,7 +16,7 @@ export const login = (status) => {
             console.log("response",res);
             current_user_id =  res[res.length - 1]._id
             console.log("userlog",current_user_id)
-            fetch('http://localhost:8010/api/v1/AllUsersLog/'+current_user_id, {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/AllUsersLog/'+current_user_id, {
                 method: 'PATCH',
                 headers:authHeader(),
                 body: JSON.stringify({loggedoutAt : new Date().toLocaleString(), status : "OUT"}),
@@ -40,7 +40,7 @@ export const userLogin = (user) => {
     console.log('____USER LOGIN ______ function')
 
     return dispatch => {
-        return fetch('http://localhost:8010/api/v1/signedupuserdetails/loginuser', {
+        return fetch('https://car-travel-mern-web-app.vercel.app/api/v1/signedupuserdetails/loginuser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(user),
@@ -53,7 +53,7 @@ export const userLogin = (user) => {
                         localStorage.setItem('token', res.token);
                         alert("Successfully Logged in ✔")
                         var current_user = AuthService.finduserid()
-                        fetch('http://localhost:8010/api/v1/AllUsersLog',{
+                        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/AllUsersLog',{
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({user : current_user, loggedinAt : new Date().toLocaleString(), status : "IN"}),

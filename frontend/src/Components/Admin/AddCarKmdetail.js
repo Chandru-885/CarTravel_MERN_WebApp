@@ -19,7 +19,7 @@ export default class AddCarKmdetail extends Component {
         if(this.vechicleid.current.value ==="" || this.vechicle.current.value === "" || this.minkm.current.value === "" || this.rateperkm.current.value === "" || this.driverallowance.current.value === "" ||  this.amount.current.value === ""){
             this.setState({message: 'Enter all the fields'})
         }else{
-            fetch('http://localhost:8010/api/v1/CarkilometerDetails', {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails', {
                 method: 'POST',
                 headers: authHeader(),
                 body: JSON.stringify({vechicleid: this.vechicleid.current.value, vechicle: this.vechicle.current.value, minkm: this.minkm.current.value, rateperkm : this.rateperkm.current.value, driverallowance : this.driverallowance.current.value, amount:this.amount.current.value}),

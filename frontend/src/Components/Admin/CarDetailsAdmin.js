@@ -12,7 +12,7 @@ export default class CarDetailsAdmin extends Component {
         }
     
         componentDidMount(){
-            fetch('http://localhost:8010/api/v1/CarkilometerDetails',{
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails',{
                 headers:authHeader()
             })
             .then(res=>res.json())
@@ -22,13 +22,13 @@ export default class CarDetailsAdmin extends Component {
         }
 
         deleteCar_km_Detail(vechicleid){
-            fetch('http://localhost:8010/api/v1/CarkilometerDetails/' + vechicleid, {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails/' + vechicleid, {
             headers:authHeader(),    
             method: 'DELETE' 
             })
             .then(res=>res.json())
             .then(data=>{
-                    fetch('http://localhost:8010/api/v1/CarkilometerDetails/',{
+                    fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails/',{
                         headers:authHeader()
                     })
                     .then(res=>res.json())

@@ -10,7 +10,7 @@ export default class AllLocalBooked extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:8010/api/v1/carbookedusers',{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers',{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -22,7 +22,7 @@ export default class AllLocalBooked extends Component {
     search(e){
         e.preventDefault();
         this.setState({displayAll:false})
-        fetch('http://localhost:8010/api/v1/carbookedusers/'+ this.searchinput.current.value,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/'+ this.searchinput.current.value,{
             headers:authHeader()
         })
         .then(res=>res.json())

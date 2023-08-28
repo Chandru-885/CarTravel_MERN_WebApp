@@ -16,7 +16,7 @@ export default class UpdatepackageAdmin extends Component {
     componentDidMount() {
         const { match: { params } } = this.props;
         console.log(this.props);
-        fetch('http://localhost:8010/api/v1/adminHomePage/'+params.packagenameid,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage/'+params.packagenameid,{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -37,7 +37,7 @@ export default class UpdatepackageAdmin extends Component {
         if(this.packagename.current.value === "" || this.packagedetails.current.value === "" || this.packageprice.current.value === "" || this.packageimage.current.value === ""){
             this.setState({message: 'Enter all the fields'})
         }else{
-            fetch('http://localhost:8010/api/v1/adminHomePage/'+this.state.GalleryDatas.packagenameid, {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage/'+this.state.GalleryDatas.packagenameid, {
                 method: 'PATCH',
                 headers:authHeader(),
                 body: JSON.stringify({ packagename: this.packagename.current.value, packagedetails: this.packagedetails.current.value, packageprice : this.packageprice.current.value, packageimage : this.packageimage.current.value, carType:this.carType.current.value,noofdays:this.noofdays.current.value}),

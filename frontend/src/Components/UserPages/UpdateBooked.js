@@ -15,7 +15,7 @@ export default class UpdateBooked extends Component {
     componentDidMount() {
         const { match: { params } } = this.props;
         console.log(this.props);
-        fetch('http://localhost:8010/api/v1/carbookedusers/'+params.name)
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/'+params.name)
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
@@ -32,7 +32,7 @@ export default class UpdateBooked extends Component {
         if(this.name.current.value === "" || this.phoneNumber.current.value === "" || this.FromLocation.current.value === "" || this.ToLocation.current.value === "" || this.DateTime.current.value === ""){
             this.setState({message: 'Enter all the fields'})
         }else{
-            fetch('http://localhost:8010/api/v1/carbookedusers', {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers', {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: this.name.current.value, phoneNumber: this.phoneNumber.current.value, FromLocation : this.FromLocation.current.value, ToLocation : this.ToLocation.current.value, DateTime : this.DateTime.current.value}),

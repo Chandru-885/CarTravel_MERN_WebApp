@@ -14,7 +14,7 @@ export default class TourBeforeConfirm extends Component {
     componentDidMount() {
         const { match: { params } } = this.props;
         console.log(this.props);
-        fetch('http://localhost:8010/api/v1/adminHomePage/'+params.packagenameid,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage/'+params.packagenameid,{
             headers:authHeader()
         })
         .then(res=>res.json())

@@ -17,7 +17,7 @@ export default class UpdateCarKmDetail extends Component {
         componentDidMount() {
             const { match: { params } } = this.props;
             console.log(this.props);
-            fetch('http://localhost:8010/api/v1/CarkilometerDetails/'+params.vechicleid,{
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails/'+params.vechicleid,{
                 headers:authHeader()
             })
             .then(res=>res.json())
@@ -39,7 +39,7 @@ export default class UpdateCarKmDetail extends Component {
             if(this.vechicle.current.value === "" || this.minkm.current.value === "" || this.rateperkm.current.value === "" || this.driverallowance.current.value === "" ||  this.amount.current.value === ""){
                 this.setState({message: 'Enter all the fields'})
             }else{
-                fetch('http://localhost:8010/api/v1/CarkilometerDetails/'+this.state.CarKmDatas.vechicleid, {
+                fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails/'+this.state.CarKmDatas.vechicleid, {
                     method: 'PATCH',
                     headers:authHeader(),
                     body: JSON.stringify({vechicle: this.vechicle.current.value, minkm: this.minkm.current.value, rateperkm : this.rateperkm.current.value, driverallowance : this.driverallowance.current.value, amount:this.amount.current.value}),

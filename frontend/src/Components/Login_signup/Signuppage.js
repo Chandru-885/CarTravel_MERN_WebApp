@@ -45,7 +45,7 @@ export default class Signuppage extends Component {
     signupuser(event){
         event.preventDefault();
         if(this.state.usernameCheck === "form-control is-valid" && this.state.emailidCheck === "form-control is-valid" && this.state.phonenumberCheck === "form-control is-valid" && this.state.passwordCheck === "form-control is-valid"){
-            fetch('http://localhost:8010/api/v1/signedupuserdetails', {
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/signedupuserdetails', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({username: this.state.username, emailid: this.state.emailid, phonenumber: this.state.phonenumber, password : this.state.password, signeddate : new Date().toLocaleString()}),

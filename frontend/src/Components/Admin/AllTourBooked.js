@@ -10,7 +10,7 @@ export default class AllTourBooked extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:8010/api/v1/cartourbookedusers',{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers',{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -23,7 +23,7 @@ export default class AllTourBooked extends Component {
     search(e){
         e.preventDefault();
         this.setState({displayAll:false})
-        fetch('http://localhost:8010/api/v1/cartourbookedusers/'+ this.searchinput.current.value,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers/'+ this.searchinput.current.value,{
             headers:authHeader()
         })
         .then(res=>res.json())

@@ -17,7 +17,7 @@ export default class CarDetails extends Component {
         }
     
         componentDidMount(){
-            fetch('http://localhost:8010/api/v1/CarkilometerDetails',{
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails',{
                 headers:authHeader()
             })
             .then(res=>res.json())
@@ -87,7 +87,7 @@ export default class CarDetails extends Component {
     {/* <button type="button" className="btn btn-warning m-1"> <Link to={'updateCarBookedData/' + Car_km_Detail.name}>Update</Link> </button> */}
     {/* </td> */}
     // deleteCar_km_Detail(id){
-    //     fetch('http://localhost:8010/api/v1/carbookedusers/' + id, {
+    //     fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/' + id, {
     //     headers:authHeader(),    
     //     method: 'DELETE' 
     //     })
@@ -95,7 +95,7 @@ export default class CarDetails extends Component {
     //     .then(data=>{
     //         console.log(data);
     //         this.setState({message: 'Record successfully deleted'})
-    //             fetch('http://localhost:8010/api/v1/carbookedusers/',{
+    //             fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers/',{
     //                 headers:authHeader()
     //             })
     //             .then(res=>res.json())
@@ -144,7 +144,7 @@ export default class CarDetails extends Component {
         // search(e){
         //     e.preventDefault();
         //     this.setState({displayAll:false})
-        //     fetch('http://localhost:8010/api/v1/CarkilometerDetails/'+ this.searchinput.current.value,{
+        //     fetch('https://car-travel-mern-web-app.vercel.app/api/v1/CarkilometerDetails/'+ this.searchinput.current.value,{
         //         headers:authHeader()
         //     })
         //     .then(res=>res.json())

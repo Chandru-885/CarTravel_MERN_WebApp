@@ -13,7 +13,7 @@ export default class HomepageAdmin extends Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:8010/api/v1/adminHomePage',{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage',{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -23,14 +23,14 @@ export default class HomepageAdmin extends Component {
     }
 
     deletepackage(packagenameid){
-        fetch('http://localhost:8010/api/v1/adminHomePage/' + packagenameid, {
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage/' + packagenameid, {
             headers:authHeader(),
             method: 'DELETE'
          })
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            fetch('http://localhost:8010/api/v1/adminHomePage')
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/adminHomePage')
             .then(res=>res.json())
             .then(data=>{
                 this.setState({GalleryDatas: data.data})

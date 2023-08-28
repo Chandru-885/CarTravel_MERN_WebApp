@@ -14,7 +14,7 @@ export default class ConfirmBooking extends Component {
     submitbooked(){
         var userid  =  AuthService.finduserid();
         var usernameid = AuthService.findusername();
-        fetch('http://localhost:8010/api/v1/carbookedusers', {
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/carbookedusers', {
             method: 'POST',
             headers: authHeader(),
             body: JSON.stringify({user_name:this.state.confirmbooking[0], phoneNumber: this.state.confirmbooking[1] , FromLocation: this.state.confirmbooking[2], ToLocation:this.state.confirmbooking[3],  user: userid, usernameid : usernameid, DateTime : new Date().toLocaleString()}),

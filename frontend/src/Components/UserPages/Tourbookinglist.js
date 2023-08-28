@@ -11,7 +11,7 @@ export default class Tourbookinglist extends Component {
 
     componentDidMount(){
         var Userid  =  AuthService.finduserid();
-        fetch('http://localhost:8010/api/v1/cartourbookedusers/'+ Userid,{
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers/'+ Userid,{
             headers:authHeader()
         })
         .then(res=>res.json())
@@ -23,7 +23,7 @@ export default class Tourbookinglist extends Component {
 
     deletepreviousBooking(_id){
         console.log("tourdeleteid",_id)
-        fetch('http://localhost:8010/api/v1/cartourbookedusers/' + _id, {
+        fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers/' + _id, {
             headers:authHeader(),
             method: 'DELETE'
         })
@@ -31,7 +31,7 @@ export default class Tourbookinglist extends Component {
         .then(data=>{
             console.log(data);
             var Userid  =  AuthService.finduserid();
-            fetch('http://localhost:8010/api/v1/cartourbookedusers/'+Userid,{
+            fetch('https://car-travel-mern-web-app.vercel.app/api/v1/cartourbookedusers/'+Userid,{
                 headers:authHeader()
             })
             .then(res=>res.json())
